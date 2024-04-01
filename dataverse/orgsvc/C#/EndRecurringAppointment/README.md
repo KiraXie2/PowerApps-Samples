@@ -1,10 +1,10 @@
 # End a recurring appointment series
 
-The following sample shows how to end a recurring appointment series by using the [DeleteOpenInstancesRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.deleteopeninstancesrequest?view=dynamics-general-ce-9) message.
+The following sample shows how to end a recurring appointment series by using the [DeleteOpenInstancesRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.deleteopeninstancesrequest) message.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

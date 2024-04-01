@@ -1,10 +1,10 @@
 # Sample: Initialize a record from existing record
 
-This sample shows how to use the [IOrganizationService.InitializeFromRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.initializefromrequest?view=dynamics-general-ce-9) message to create new records from an existing record.
+This sample shows how to use the [IOrganizationService.InitializeFromRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.initializefromrequest) message to create new records from an existing record.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

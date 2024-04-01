@@ -1,10 +1,10 @@
 # Dump global option set information to a file
 
-This sample shows how to dump global option set information to a file. It uses the [RetrieveAllOptionSetsRequest](https://docs.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.retrievealloptionsetsrequest?view=dynamics-general-ce-9) message.
+This sample shows how to dump global option set information to a file. It uses the [RetrieveAllOptionSetsRequest](https://learn.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.retrievealloptionsetsrequest) message.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

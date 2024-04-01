@@ -1,10 +1,10 @@
 # Get report history limits
 
-This sample shows how to get report history limits using the [GetReportHistoryLimitRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.getreporthistorylimitrequest?view=dynamics-general-ce-9) message.
+This sample shows how to get report history limits using the [GetReportHistoryLimitRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.getreporthistorylimitrequest) message.
 
 ## How to run this sample
 
-See [How to run this sample](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run this sample](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

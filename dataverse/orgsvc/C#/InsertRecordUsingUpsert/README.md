@@ -1,10 +1,10 @@
 # Sample: Insert or update a record using Upsert
 
-This sample code shows how to insert or update records by using the [UpsertRequest](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.messages.upsertrequest?view=dynamics-general-ce-9) message. 
+This sample code shows how to insert or update records by using the [UpsertRequest](https://learn.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.upsertrequest) message. 
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 ## What this sample does
 
 The `UpsertRequest` message is intended to be used in a scenario where it contains data that is needed to update or insert a record.

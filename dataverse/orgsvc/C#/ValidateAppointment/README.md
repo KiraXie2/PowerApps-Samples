@@ -1,10 +1,10 @@
 # Validate an appointment
 
-This sample shows how to validate an appointment using the [ValidateRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.validaterequest?view=dynamics-general-ce-9) message.
+This sample shows how to validate an appointment using the [ValidateRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.validaterequest) message.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

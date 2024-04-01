@@ -1,10 +1,10 @@
 # Release a queue item to the queue (early bound)
 
-This sample shows how to use [ReleaseToQueueRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.releasetoqueuerequest?view=dynamics-general-ce-9) to dissociate a user from a queue item that he or she worked on and release a queue item back to the queue.
+This sample shows how to use [ReleaseToQueueRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.releasetoqueuerequest) to dissociate a user from a queue item that he or she worked on and release a queue item back to the queue.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

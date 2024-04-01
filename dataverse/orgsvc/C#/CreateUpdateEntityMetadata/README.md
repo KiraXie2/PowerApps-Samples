@@ -2,11 +2,11 @@
 
 This topic shows how to programmatically create a custom user-owned table called **Bank Account** and add four different types of columns to it.
 
-You can also create organization-owned custom entities. More information: [Table ownership](https://docs.microsoft.com/dynamics365/customerengagement/on-premises/developer/introduction-entities#entity-ownership)
+You can also create organization-owned custom entities. More information: [Table ownership](https://learn.microsoft.com/dynamics365/customerengagement/on-premises/developer/introduction-entities#entity-ownership)
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

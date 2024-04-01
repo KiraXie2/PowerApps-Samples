@@ -1,10 +1,10 @@
 # Export ribbon definitions
 
-This sample shows how to export Ribbon definitions. It uses the [RetrieveApplicationRibbonRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.retrieveapplicationribbonrequest?view=dynamics-general-ce-9) and [RetrieveEntityRibbonRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.retrieveentityribbonrequest?view=dynamics-general-ce-9) messages. You can find the downloaded ribbon definitions in `ExportRibbonDefinitions\bin\Debug`.
+This sample shows how to export Ribbon definitions. It uses the [RetrieveApplicationRibbonRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.retrieveapplicationribbonrequest) and [RetrieveEntityRibbonRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.retrieveentityribbonrequest) messages. You can find the downloaded ribbon definitions in `ExportRibbonDefinitions\bin\Debug`.
 
 ## How to run this sample
 
-See [How to run this sample](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run this sample](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

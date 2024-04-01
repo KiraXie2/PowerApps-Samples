@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
+using System.Web;
 
 namespace PowerApps.Samples
 {
@@ -18,7 +19,7 @@ namespace PowerApps.Samples
         /// <returns></returns>
         public static async Task WriteHttpSample(HttpRequestMessage request, HttpResponseMessage response, Uri baseAddress, string outputFolder)
         {
-            string[] unwantedRequestHeaders = new string[] { "Authorization", "User-Agent" };
+            string[] unwantedRequestHeaders = new string[] { "Authorization", "User-Agent", "CRM.ServiceId" };
             string[] unwantedResponseHeaders = new string[] {
                 "Cache-Control",
                 "x-ms-service-request-id",
@@ -32,8 +33,9 @@ namespace PowerApps.Samples
                 "x-ms-utilization-percent",
                 "X-Source",
                 "Public",
-                "Date"
-                //"Location" // needed in some cases.
+                "Date",
+                "CRM.ServiceId",
+                "Location" // needed in some cases.
 
             };
 
@@ -41,7 +43,7 @@ namespace PowerApps.Samples
             sb.AppendLine("**Request**");
             sb.AppendLine();
             sb.AppendLine("```http");
-            sb.AppendLine($"{request.Method.Method} [Organization Uri]{request.RequestUri.PathAndQuery} HTTP/1.1");
+            sb.AppendLine($"{request.Method.Method} [Organization Uri]{request.RequestUri.AbsolutePath + HttpUtility.UrlDecode(request.RequestUri.Query)}");
             foreach (var item in request.Headers)
             {
                 if (!unwantedRequestHeaders.Contains(item.Key))
@@ -50,6 +52,8 @@ namespace PowerApps.Samples
                     sb.AppendLine($"{item.Key}: {value}");
                 }
             }
+            // Add example Authorization header
+            sb.AppendLine("Authorization: Bearer <access token>");
 
             if (request.Content != null)
             {
@@ -119,7 +123,7 @@ namespace PowerApps.Samples
                 if (response.Content.IsMimeMultipartContent())
                 {
                     string unformattedContent = await response.Content.ReadAsStringAsync();
-                    if (!string.IsNullOrEmpty(unformattedContent))
+                    if (!string.IsNullOrWhiteSpace(unformattedContent))
                     {
                         sb.AppendLine();
                         unformattedContent = unformattedContent.Replace(baseAddress.ToString(), "[Organization Uri]/api/data/v9.2/");
@@ -129,7 +133,7 @@ namespace PowerApps.Samples
                 else
                 {
                     string unformattedContent = await response.Content.ReadAsStringAsync();
-                    if (!string.IsNullOrEmpty(unformattedContent))
+                    if (!string.IsNullOrWhiteSpace(unformattedContent))
                     {
                         sb.AppendLine();
                         unformattedContent = unformattedContent.Replace(baseAddress.ToString(), "[Organization Uri]/api/data/v9.2/");

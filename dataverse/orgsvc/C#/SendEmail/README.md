@@ -1,10 +1,10 @@
 # Sample: Send an email
 
-This sample shows how to send an email using [SendEmailRequest](https://docs.microsoft.com/en-us/dotnet/api/microsoft.crm.sdk.messages.sendemailrequest?view=dynamics-general-ce-9) message.
+This sample shows how to send an email using [SendEmailRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.sendemailrequest) message.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

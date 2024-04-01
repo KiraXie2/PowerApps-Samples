@@ -10,11 +10,11 @@ description: "This sample shows how to install or uninstall the sample data for 
 
 # Install or remove sample data
 
-This sample shows how to install or uninstall the sample data for an organization by using the [InstallSampleDataRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.installsampledatarequest?view=dynamics-general-ce-9) message.
+This sample shows how to install or uninstall the sample data for an organization by using the [InstallSampleDataRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.installsampledatarequest) message.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

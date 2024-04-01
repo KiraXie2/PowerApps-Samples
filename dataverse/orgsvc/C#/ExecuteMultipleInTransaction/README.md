@@ -2,12 +2,12 @@
 
 This sample shows how to use a single web method call to execute all message requests in a collection as part of a single database transaction. It is a common requirement in business applications to coordinate changes of multiple records in the system so that either all the data changes succeed, or none of them do. In database terms, this is known as executing multiple operations in a single transaction with the ability to roll back all data changes should any one operation fail.
 
-You can execute two or more organization service requests in a single database transaction using the [ExecuteTransactionRequest](https://docs.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.executetransactionrequest?view=dynamics-general-ce-9) message request. 
+You can execute two or more organization service requests in a single database transaction using the [ExecuteTransactionRequest](https://learn.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.executetransactionrequest) message request. 
 
 
 ## How to run this sample
 
-See [How to run this sample](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run this sample](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

@@ -1,13 +1,13 @@
 # Synchronize data with external systems using change tracking
 
-This sample code shows how to retrieve changes from a table and synchronize data with external systems by using the `RetrieveEntityChanges` message with the [RetrieveEntityChangesRequest](https://docs.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.retrieveentitychangesrequest) and [RetrieveEntityChangesResponse](https://docs.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.retrieveentitychangesresponse) classes.
+This sample code shows how to retrieve changes from a table and synchronize data with external systems by using the `RetrieveEntityChanges` message with the [RetrieveEntityChangesRequest](https://learn.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.retrieveentitychangesrequest) and [RetrieveEntityChangesResponse](https://learn.microsoft.com/dotnet/api/microsoft.xrm.sdk.messages.retrieveentitychangesresponse) classes.
 
-For more information about the feature that this sample demonstrates, see [Use change tracking to synchronize data with external systems](https://docs.microsoft.com/powerapps/developer/common-data-service/use-change-tracking-synchronize-data-external-systems).
+For more information about the feature that this sample demonstrates, see [Use change tracking to synchronize data with external systems](https://learn.microsoft.com/powerapps/developer/common-data-service/use-change-tracking-synchronize-data-external-systems).
 <!-- The link above won't work until the topic is published -->
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

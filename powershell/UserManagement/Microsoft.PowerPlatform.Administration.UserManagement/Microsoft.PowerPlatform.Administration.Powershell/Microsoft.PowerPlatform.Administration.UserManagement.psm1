@@ -43,20 +43,20 @@ $dlls = Get-ChildItem -path "." -Filter "*.dll"
 
 foreach($dll in $dlls)
 {
-    try
-    {
-        $DLLName = $dll.Name
-        $fullDLLPath = $dll.FullName         
-        [System.Reflection.Assembly]::LoadFrom($fullDLLPath)
-        Write-Debug "Loaded $DLLName"
-    }
-    catch
-    {
-        $message = $_.Exception.GetBaseException().LoaderExceptions
-        Write-Host "Error loading" $dll.name
-        Write-Host "exception" $message
-        exit
-    }
+    try
+    {
+        $DLLName = $dll.Name
+        $fullDLLPath = $dll.FullName
+            [System.Reflection.Assembly]::LoadFrom($fullDLLPath)
+        Write-Debug "Loaded $DLLName"
+    }
+    catch
+    {
+        $message = $_.Exception.GetBaseException().LoaderExceptions
+        Write-Host "Error loading" $dll.name
+        Write-Host "exception" $message
+        exit
+    }
 }
 
 $OnAssemblyResolve = [System.ResolveEventHandler] {
@@ -96,10 +96,10 @@ Localized role name in dataverse (Ex: System Administrator)
 Url of Environment, if admin wants to get reports from only one environment
 
 .PARAMETER processAllEnvironments
-Generate reports for all environments the admin user has access to
+Removes roles from all environments the admin user has access to
 
 .PARAMETER geo
-Generate reports for environments in given geo - GeoCodes[https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions]. If not specified, processes all environments across all geos. 
+Removes roles from environments in given geo. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]
 
 .PARAMETER outputLogsDirectory
 Location folder for the logs & reports to be written to.
@@ -117,7 +117,7 @@ function Remove-RoleAssignmentFromUsers
         [String]$roleName,
 
         [Parameter(Mandatory=$false,
-                    HelpMessage = "Geo name if you want to clean up role assignments only in specific geo.Processes all geos by default.For Geo codes, please refer to - https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions")]
+                    HelpMessage = "Geo name if you want to clean up role assignments only in specific geo.Processes all geos by default. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]")]
         [String]$geo = "",
 
         [Parameter(Mandatory=$false,
@@ -207,7 +207,7 @@ Url of Environment, if admin wants to get reports from only one environment
 Generate reports for all environments the admin user has access to
 
 .PARAMETER geo
-Generate reports for environments in given geo - GeoCodes[https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions]. If not specified, processes all environments across all geos. 
+Adds roles to users for environments in given geo. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]
 
 .PARAMETER outputLogsDirectory
 Location folder for the logs & reports to be written to.
@@ -225,15 +225,15 @@ function Add-RoleToUsers
         [String]$roleName,
 
         [Parameter(Mandatory=$false,
-                    HelpMessage = "Geo name if you want to clean up role assignments only in specific geo. Default is global. For Geo codes, please refer to - https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions")]
+                    HelpMessage = "Adds roles to users for environments in given geo. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]")]
         [String]$geo = "",
 
         [Parameter(Mandatory=$false,
-                    HelpMessage = "Url of the environment to clean up role assignments from.")]
+                    HelpMessage = "Url of the environment to add role assignments from.")]
         [String]$environmentUrl = "",
 
         [Parameter(Mandatory=$false,
-                    HelpMessage = "Clean up role assignments in all environments. Clean up only in specific geo if geo is supplied, otherwise from all geos")]
+                    HelpMessage = "Add roles to users in all environments. Addonly in specific geo if geo is supplied, otherwise from all geos")]
         [boolean]$processAllEnvironments = $false,
 
         [Parameter(Mandatory=$true,
@@ -314,7 +314,7 @@ Url of Environment, if admin wants to get reports from only one environment
 Generate reports for all environments the admin user has access to
 
 .PARAMETER geo
-Generate reports for environments in given geo - GeoCodes[https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions]. If not specified, processes all environments across all geos. 
+Generate reports for environments in given geo. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]
 
 .PARAMETER outputLogsDirectory
 Location folder for the logs & reports to be written to.
@@ -332,7 +332,7 @@ function Get-UsersWithRoleAssignment
         [String]$roleName,
 
         [Parameter(Mandatory=$false,
-                    HelpMessage = "geo name if you want reports from specific geo. Processes all geos by default. For Geo codes, please refer to - https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions")]
+                    HelpMessage = "Generate reports for environments in given geo. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]")]
         [String]$geo = "",
 
         [Parameter(Mandatory=$false,
@@ -389,6 +389,106 @@ function Get-UsersWithRoleAssignment
 
         $tenantOperationsHelper.GetUsersWithRoleAssignment($credentials.UserName, $password, $roleName, $environmentUrl, $geo, $processAllEnvironments, $outputLogsDirectory);
         
+    }catch
+    {        
+        $message = $_.Exception.GetBaseException();        
+        Write-Host $message
+    }
+}
+
+<#
+.SYNOPSIS 
+Bulk assign user records to users 
+
+.DESCRIPTION
+Bulk assign user records to users  in an environment / all environments in geo / all environments in the tenant.  
+
+.PARAMETER usersFilePath 
+Path to file containing list of user princiapl names (source and target user principals separated by commas)
+
+.PARAMETER environmentUrl
+Url of Environment, if admin wants to get reports from only one environment
+
+.PARAMETER processAllEnvironments
+Removes roles from all environments the admin user has access to
+
+.PARAMETER geo
+Removes roles from environments in given geo. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]
+
+.PARAMETER outputLogsDirectory
+Location folder for the logs & reports to be written to.
+#>
+
+function Add-BulkRecordsToUsers
+{
+    [CmdletBinding()]
+
+    Param(
+
+        [Parameter(Mandatory=$false,
+                    HelpMessage = "Geo name if you want to clean up role assignments only in specific geo.Processes all geos by default. Valid Geo codes - [NA, EMEA, APAC, SAM, OCE, JPN, IND, CAN, GBR, FRA, UAE,ZAF, GER, CHE, KOR, NOR, SGP]")]
+        [String]$geo = "",
+
+        [Parameter(Mandatory=$false,
+                    HelpMessage = "Url of the environment to clean up role assignments from.")]
+        [String]$environmentUrl = "",
+
+        [Parameter(Mandatory=$false,
+                    HelpMessage = "Clean up role assignments in all environments. Clean up only in specific geo if geo is supplied, otherwise global")]
+        [boolean]$processAllEnvironments = $false,
+
+        [Parameter(Mandatory=$true,
+                    HelpMessage = "File path to the list of users (source user principal and target user principal separated by comma) to assign records from")]
+        [ValidateNotNullOrEmpty()]
+        [String]$usersFilePath,
+
+        [Parameter(Mandatory=$true,
+                    HelpMessage = "Directory to write output logs and reports to")]
+        [ValidateNotNullOrEmpty()]
+        [String]$outputLogsDirectory
+    )
+
+    try
+    {
+        if($PSBoundParameters.ContainsKey('environmentUrl') -eq $false -and $PSBoundParameters.ContainsKey('processAllEnvironments') -eq $false)
+        {
+            Write-Host "One of the following parameters must be provided : environmentUrl, processAllEnvironments";
+            return;
+        }
+
+        if($PSBoundParameters.ContainsKey('environmentUrl') -eq $true -and $PSBoundParameters.ContainsKey('processAllEnvironments') -eq $true)
+        {
+            Write-Host "ONLY one of the following parameters must be provided : environmentUrl, processAllEnvironments";
+            return;
+        }
+
+        if (Test-Path $outputLogsDirectory) {
+   
+            Write-Host "Output Directory Exists"
+        }
+        else
+        {
+  
+            #PowerShell Create directory if not exists
+            New-Item $outputLogsDirectory -ItemType Directory
+            Write-Host "Output Directory created successfully"
+        }
+
+        $outputLogsDirectory = Convert-Path -LiteralPath $outputLogsDirectory
+
+        $usersFilePath = Convert-Path -LiteralPath $usersFilePath
+
+        $tenantOperationsHelper = New-Object -TypeName 'Microsoft.PowerPlatform.Administration.Helpers.TenantOperationsHelper' 
+        
+        $credentials = Get-Credential -Message "Provide user credentials to connect to dataverse"
+
+        $userName = $credentials.UserName
+        $password = $credentials.GetNetworkCredential().Password
+
+        #Connect to Azure AD
+        Connect-AzureAD -Credential $credentials
+
+        $tenantOperationsHelper.BulkAssignRecordsToUsers($credentials.UserName, $password, $usersFilePath, $environmentUrl, $geo, $processAllEnvironments, $outputLogsDirectory);
     }catch
     {        
         $message = $_.Exception.GetBaseException();        

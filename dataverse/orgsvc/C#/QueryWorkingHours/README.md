@@ -1,10 +1,10 @@
 # Query the working hours of a user
 
-This sample shows how to retrieve the working hours of a user by using the [QueryScheduleRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.queryschedulerequest?view=dynamics-general-ce-9) message.
+This sample shows how to retrieve the working hours of a user by using the [QueryScheduleRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.queryschedulerequest) message.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

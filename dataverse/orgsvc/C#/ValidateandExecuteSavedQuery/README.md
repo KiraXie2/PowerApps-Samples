@@ -1,10 +1,10 @@
 # Sample: Validate and execute a saved query
 
-This sample shows how to use the [IOrganizationService.ValidateSavedQueryRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.validatesavedqueryrequest?view=dynamics-general-ce-9) message to validate a FetchXML query, and then use the [IOrganizationService.ExecuteByIdSavedQueryRequest](https://docs.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.executebyidsavedqueryrequest?view=dynamics-general-ce-9) message to execute the query.
+This sample shows how to use the [IOrganizationService.ValidateSavedQueryRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.validatesavedqueryrequest) message to validate a FetchXML query, and then use the [IOrganizationService.ExecuteByIdSavedQueryRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.executebyidsavedqueryrequest) message to execute the query.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

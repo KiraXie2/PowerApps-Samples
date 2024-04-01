@@ -1,10 +1,10 @@
 # Send an email using a template
 
-This sample shows how to send an email message by using a template using the [SendEmailFromTemplateRequest](https://docs.microsoft.com/en-us/dotnet/api/microsoft.crm.sdk.messages.sendemailfromtemplaterequest?view=dynamics-general-ce-9) message.
+This sample shows how to send an email message by using a template using the [SendEmailFromTemplateRequest](https://learn.microsoft.com/dotnet/api/microsoft.crm.sdk.messages.sendemailfromtemplaterequest) message.
 
 ## How to run this sample
 
-See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/cds/README.md) for information about how to run this sample.
+See [How to run samples](https://github.com/microsoft/PowerApps-Samples/blob/master/dataverse/README.md) for information about how to run this sample.
 
 ## What this sample does
 

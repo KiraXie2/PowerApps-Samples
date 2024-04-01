@@ -32,7 +32,7 @@ This sample uses the common helper code in the [WebAPIService](../WebAPIService)
 
    |Property|Instructions  |
    |---------|---------|
-   |`Url`|The Url for your environment. Replace the placeholder `https://yourorg.api.crm.dynamics.com` value with the value for your environment. See [View developer resources](https://docs.microsoft.com/power-apps/developer/data-platform/view-download-developer-resources) to find this. |
+   |`Url`|The Url for your environment. Replace the placeholder `https://yourorg.api.crm.dynamics.com` value with the value for your environment. See [View developer resources](https://learn.microsoft.com/power-apps/developer/data-platform/view-download-developer-resources) to find this. |
    |`UserPrincipalName`|Replace the placeholder `you@yourorg.onmicrosoft.com` value with the UPN value you use to access the environment.|
    |`Password`|Replace the placeholder `yourPassword` value with the password you use.|
 
@@ -72,6 +72,8 @@ Operations:
 - Create and retrieve a new memo column for the `sample_BankAccount` table.
 - Create and retrieve a new money column for the `sample_BankAccount` table.
 - Create and retrieve a new choice column for the `sample_BankAccount` table.
+- Create and retrieve a new choices column for the `sample_BankAccount` table.
+- Create and retrieve a new big int column for the `sample_BankAccount` table.
 - Add a new option to the choice column using the WebAPIService [InsertOptionValueRequest class](../WebAPIService/Metadata/Messages/InsertOptionValueRequest.cs)
 - Change the order of the options of the choice column using the WebAPIService [OrderOptionRequest class](../WebAPIService/Metadata/Messages/OrderOptionRequest.cs)
 - Delete one of the options of the choice column using the WebAPIService [DeleteOptionValueRequest class](../WebAPIService/Metadata/Messages/DeleteOptionValueRequest.cs)
